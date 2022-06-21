@@ -45,7 +45,8 @@ class BaseLinks:
     @property
     def base_url(self):
         """Get the base url."""
-        return str(self.request.base_url)
+        #return str(self.request.base_url)
+        return "https://api.mudaps.com/"
 
     @property
     def url(self):

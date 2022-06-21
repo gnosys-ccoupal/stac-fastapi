@@ -19,6 +19,7 @@ services:
       - POSTGRES_HOST_WRITER=database
       - POSTGRES_PORT=5432
       - WEB_CONCURRENCY=10
+      - FORWARDED_ALLOW_IPS=*
     ports:
       - "8081:8081"
     volumes:
@@ -51,6 +52,7 @@ services:
       - DB_MIN_CONN_SIZE=1
       - DB_MAX_CONN_SIZE=1
       - USE_API_HYDRATE=${USE_API_HYDRATE:-false}
+      - FORWARDED_ALLOW_IPS=*
     ports:
       - "8082:8082"
     volumes:
@@ -72,6 +74,8 @@ services:
       - PGPASSWORD=password
       - PGHOST=localhost
       - PGDATABASE=postgis
+    volumes:
+      - ./postgresql:/var/lib/postgresql
     ports:
       - "5439:5432"
     command: postgres -N 500
