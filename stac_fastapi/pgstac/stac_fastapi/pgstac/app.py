@@ -59,6 +59,7 @@ async def shutdown_event():
 def run():
     """Run app from command line using uvicorn if available."""
     try:
+        print('changes made')
         import uvicorn
 
         uvicorn.run(
