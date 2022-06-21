@@ -35,6 +35,7 @@ class CoreCrudClient(AsyncBaseCoreClient):
     async def all_collections(self, **kwargs) -> Collections:
         """Read all collections from the database."""
         request: Request = kwargs["request"]
+        print(f"request base_url is {request.base_url}")
         #base_url = str(request.base_url)
         base_url = "https://api.mudaps.com/"
         pool = request.app.state.readpool
