@@ -19,8 +19,8 @@ run_sqlalchemy = docker-compose run --rm \
 				-e POSTGRES_PASS=${POSTGRES_PASS} \
 				-e POSTGRES_USER=${POSTGRES_USER} \
 				-e POSTGRES_DBNAME=${POSTGRES_DBNAME} \
-				-e =${POSTGRES_PORT} \
-				-e =${POSTGRES_HOST} \
+				-e POSTGRES_PORT=${POSTGRES_PORT} \
+				-e POSTGRES_HOST=${POSTGRES_HOST} \
 				app-sqlalchemy
 
 run_pgstac = docker-compose run --rm \
