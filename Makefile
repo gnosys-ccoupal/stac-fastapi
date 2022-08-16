@@ -1,6 +1,6 @@
 #!make
 APP_HOST ?= 0.0.0.0
-APP_PORT ?= 8080
+APP_PORT ?= 80
 POSTGRES_HOST_WRITER ?= db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
 POSTGRES_HOST_READER ?= db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
 POSTGRES_PASS ?= change_me
