@@ -1,6 +1,7 @@
 #!make
 APP_HOST ?= 0.0.0.0
 APP_PORT ?= 8080
+    
 EXTERNAL_APP_PORT ?= ${APP_PORT}
 run_sqlalchemy = docker-compose run --rm \
 				-p ${EXTERNAL_APP_PORT}:${APP_PORT} \
@@ -12,6 +13,8 @@ run_pgstac = docker-compose run --rm \
 				-p ${EXTERNAL_APP_PORT}:${APP_PORT} \
 				-e APP_HOST=${APP_HOST} \
 				-e APP_PORT=${APP_PORT} \
+				-e WEB_CONCURRENCY=10 \
+      			-e FORWARDED_ALLOW_IPS=* \
 				app-pgstac
 
 .PHONY: image

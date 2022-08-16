@@ -55,6 +55,7 @@ def run():
             port=settings.app_port,
             log_level="info",
             reload=settings.reload,
+            proxy_headers=True,
         )
     except ImportError:
         raise RuntimeError("Uvicorn must be installed in order to use command")

@@ -349,12 +349,11 @@ class BaseCoreClient(LandingPageMixin, abc.ABC):
             API landing page, serving as an entry point to the API.
         """
         request: Request = kwargs["request"]
-        base_url = str(request.base_url)
+        #base_url = str(request.base_url)
+        base_url = "https://api.mudaps.com/"
         extension_schemas = [
             schema.schema_href for schema in self.extensions if schema.schema_href
         ]
-        request: Request = kwargs["request"]
-        base_url = str(request.base_url)
         landing_page = self._landing_page(
             base_url=base_url,
             conformance_classes=self.conformance_classes(),
@@ -540,7 +539,8 @@ class AsyncBaseCoreClient(LandingPageMixin, abc.ABC):
             API landing page, serving as an entry point to the API.
         """
         request: Request = kwargs["request"]
-        base_url = str(request.base_url)
+        #base_url = str(request.base_url)
+        base_url = "https://api.mudaps.com/"
         extension_schemas = [
             schema.schema_href for schema in self.extensions if schema.schema_href
         ]

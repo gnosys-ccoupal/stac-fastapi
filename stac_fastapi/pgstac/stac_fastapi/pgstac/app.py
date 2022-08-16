@@ -61,6 +61,7 @@ async def shutdown_event():
 def run():
     """Run app from command line using uvicorn if available."""
     try:
+        print('changes made')
         import uvicorn
 
         uvicorn.run(
@@ -69,6 +70,7 @@ def run():
             port=settings.app_port,
             log_level="info",
             reload=settings.reload,
+            proxy_headers=True,
         )
     except ImportError:
         raise RuntimeError("Uvicorn must be installed in order to use command")
