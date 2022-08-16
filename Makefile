@@ -8,7 +8,7 @@ POSTGRES_USER ?= gis_admin
 POSTGRES_DBNAME ?= postgres
 POSTGRES_PORT ?= 5432
 POSTGRES_HOST ?= db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
-    
+
 EXTERNAL_APP_PORT ?= ${APP_PORT}
 run_sqlalchemy = docker-compose run --rm \
 				-p ${EXTERNAL_APP_PORT}:${APP_PORT} \
