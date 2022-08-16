@@ -1,12 +1,26 @@
 #!make
 APP_HOST ?= 0.0.0.0
 APP_PORT ?= 8080
+POSTGRES_HOST_WRITER ?=db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
+POSTGRES_HOST_READER ?=db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
+POSTGRES_PASS ?=change_me
+POSTGRES_USER ?=gis_admin
+POSTGRES_DBNAME ?=postgres
+POSTGRES_PORT ?=5432
+POSTGRES_HOST ?=db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
     
 EXTERNAL_APP_PORT ?= ${APP_PORT}
 run_sqlalchemy = docker-compose run --rm \
 				-p ${EXTERNAL_APP_PORT}:${APP_PORT} \
 				-e APP_HOST=${APP_HOST} \
 				-e APP_PORT=${APP_PORT} \
+				-e POSTGRES_HOST_WRITER=${POSTGRES_HOST_WRITER} \
+				-e POSTGRES_HOST_READER=${POSTGRES_HOST_READER} \
+				-e POSTGRES_PASS=${POSTGRES_PASS} \
+				-e POSTGRES_USER=${POSTGRES_USER} \
+				-e POSTGRES_DBNAME=${POSTGRES_DBNAME} \
+				-e =${POSTGRES_PORT} \
+				-e =${POSTGRES_HOST} \
 				app-sqlalchemy
 
 run_pgstac = docker-compose run --rm \
