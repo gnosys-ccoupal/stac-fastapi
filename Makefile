@@ -1,13 +1,13 @@
 #!make
 APP_HOST ?= 0.0.0.0
 APP_PORT ?= 8080
-POSTGRES_HOST_WRITER ?=db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
-POSTGRES_HOST_READER ?=db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
-POSTGRES_PASS ?=change_me
-POSTGRES_USER ?=gis_admin
-POSTGRES_DBNAME ?=postgres
-POSTGRES_PORT ?=5432
-POSTGRES_HOST ?=db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
+POSTGRES_HOST_WRITER ?= db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
+POSTGRES_HOST_READER ?= db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
+POSTGRES_PASS ?= change_me
+POSTGRES_USER ?= gis_admin
+POSTGRES_DBNAME ?= postgres
+POSTGRES_PORT ?= 5432
+POSTGRES_HOST ?= db-cluster.cluster-cixj6dusjgmk.us-west-1.rds.amazonaws.com
     
 EXTERNAL_APP_PORT ?= ${APP_PORT}
 run_sqlalchemy = docker-compose run --rm \
